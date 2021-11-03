@@ -1,0 +1,78 @@
+<h1>Cadastro de Produtos</h1>
+<section>  
+  <div class="cropper">
+    <input type="file" (change)="fileChangeEvent($event)" />
+    
+    <image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="1/1"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+    [roundCropper]="true"
+    [cropperMinWidth]=500
+    ></image-cropper>
+    
+    <img class="productImageToSave" [src]="croppedImage" />
+  </div>  
+  <div class="obs">
+    <p>Selecione as características:</p>
+    <div>
+      <input type="radio" id="pode" name="cozer">
+      <label for="pode">
+        <img src="../../../assets/images/laterFromBank/care-raw.png" alt="">
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="deve" name="cozer">
+      <label for="deve">
+        <img src="../../../assets/images/laterFromBank/care-cooked.png" alt="">
+      </label>
+    </div>
+    <div>
+      <input type="checkbox" id="folha">
+      <label for="folha">
+        <img src="../../../assets/images/laterFromBank/care-leaf.png" alt="">
+      </label>
+    </div>
+    <div>
+      <input type="checkbox" id="raiz">
+      <label for="raiz">
+        <img src="../../../assets/images/laterFromBank/care-root.png" alt="">
+      </label>
+    </div>
+    <div>
+      <input type="checkbox" id="fruto">
+      <label for="fruto">
+        <img src="../../../assets/images/laterFromBank/care-fruit.png" alt="">
+      </label>
+    </div>
+    <div>
+      <input type="checkbox" id="flor">
+      <label for="flor">
+        <img src="../../../assets/images/laterFromBank/care-flower.png" alt="">
+      </label>
+    </div>
+    <div>
+      <input type="checkbox" id="semente">
+      <label for="semente">
+        <img src="../../../assets/images/laterFromBank/care-seed.png" alt="">
+      </label>
+    </div>
+  </div>
+  <form>
+    <input type="text" name="codigo" placeholder="Digite o código do produto">
+    <input type="text" name="nome" placeholder="Digite o nome do produto" [(ngModel)]="nome" >
+    <input type="text" name="cientifico" placeholder="Digite o nome científico do produto">
+    <input type="text" name="outrosNomes" placeholder="Digite os demais nomes do produto">
+    <input type="text" name="descricao" placeholder="Digite a descrição do produto" [(ngModel)]="desc">
+    <input type="number" name="valor" placeholder="Digite o valor do produto" [(ngModel)]="valor">
+    <input type="number" name="quantidade_estoque" placeholder="Digite a quantidade do estoque" [(ngModel)]="quantidade_estoque">
+    
+    <button (click)="criarProduto()">Criar</button>
+
+  </form>
+</section>  

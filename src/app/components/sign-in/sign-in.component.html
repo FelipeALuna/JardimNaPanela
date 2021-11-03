@@ -1,0 +1,16 @@
+<section>
+    <img class="logo" src="../../../assets/images/name.png" alt="Logo Jardim na Panela">
+</section>
+<section>
+    <img class="sideImage" src="../../../assets/images/register.png">
+    <div class="signIn">
+        <p>Cadastro</p>
+        <input type="text" placeholder="nome" name="nome" [(ngModel)]="nome">
+        <input type="text" placeholder="usuário" name="usurio" [(ngModel)]="usuario">
+        <input type="email" placeholder="email" name="email" [(ngModel)]="email">
+        <input type="password" placeholder="senha" name="senha" [(ngModel)]="senha">
+        <input type="text" placeholder="sobrenome" name="sobrenome" [(ngModel)]="sobrenome">
+        <input type="text" placeholder="sobrenome" name="telefone" [(ngModel)]="telefone">
+        <button type="submit" (click)="cadastrarUsuario()">Enviar</button>
+    </div>
+</section>
